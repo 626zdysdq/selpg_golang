@@ -8,16 +8,17 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
+
 )
 
 //selpg的参数
 type selpg_args struct {
 	start_page  int
 	end_page    int
-	in_filename string
-	dest        string
 	page_len    int
+	dest        string
 	page_type   int
+	in_filename string
 }
 
 var sa selpg_args   //当前输入的参数
@@ -223,7 +224,7 @@ func main() {
 	sa.end_page = 1
 	sa.in_filename = ""
 	sa.dest = ""
-	sa.page_len = 20 //默认20行一页
+	sa.page_len = 10
 	sa.page_type = 'l'
 	argcount = len(args)
 	process_args(args)
